@@ -18,5 +18,20 @@ pipeline {
              }
 
         }
+        stage('Deploy to prod'){
+            steps{
+                {
+                    input message: 'Approve Production Deployment'
+                }
+                build job: 'deploy_to_prod'
+            }post{
+                success{
+                    echo "Code deployed to prod"
+                }failure{
+                    echo "Deploy to prod failed"
+                }
+            }
+        }
     }
+
 }

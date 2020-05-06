@@ -18,7 +18,7 @@ pipeline {
             stage('Deploy'){
                 steps{
                     input message: "Approve the Deploy?"
-                    sh "docker run -d -p 8090:8080 --name webapp localhost:5000/webappimage:${env.BUILD_ID}"
+                    sh "docker run -d -p 8090:8080 --name webapp.${env.BUILD_ID} localhost:5000/webappimage:${env.BUILD_ID}"
                 }
             }
         }

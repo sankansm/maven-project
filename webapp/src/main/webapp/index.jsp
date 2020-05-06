@@ -1,2 +1,2 @@
 Hello, World!
-automated build and deploy to staging
+automated build and deploy to staging....rechecking if git hook is working

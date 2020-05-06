@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: myapp-deployment
+    labels:
+        app: myapp
+        type: frontend
+
+spec:
+   template:
+      metadata:
+        name: myapp-pod
+        labels:
+          app: myapp
+          type: webapp
+      spec:
+        containers:
+          - name: java-app
+            image: localhost:5000/webappimage:6
+            ports:
+             - containerPort: 8080
+        tolerations:
+        - key: "dedicated"
+          operator: "Equal"
+          value: "master"
+          effect: "NoSchedule"
+   replicas: 2
+   strategy:
+     type: RollingUpdate
+   selector:
+     matchLabels:
+       type: webapp

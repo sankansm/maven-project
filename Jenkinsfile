@@ -26,7 +26,7 @@ pipeline {
             stage('Deploy to Kubernetes'){
                 steps{
                     input message: "Deploying to k8?"
-                    sh "kubectl create -f hello-deployment.yaml"
+                    sh "kubectl apply -f hello-deployment.yaml"
                     sh 'sleep 5'
                     sh 'kubectl apply -f hello-services.yaml'
                 }

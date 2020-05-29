@@ -1,2 +1,2 @@
 Hello, World!
-automated build and deploy to staging....rechecking if git hook is working......
+This  is CICD project and page is deployed using kuberenetes on docker container hosted on EC2.

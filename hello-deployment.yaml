@@ -16,7 +16,7 @@ spec:
       spec:
         containers:
           - name: java-app
-            image: localhost:5000/webappimage:6
+            image: localhost:5000/webappimage:${env.BUILD_ID}
             ports:
              - containerPort: 8080
         tolerations:

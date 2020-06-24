@@ -16,8 +16,7 @@
   <description>Webapp.</description>
 
   <build>
-    <finalName>${project.artifactId}</finalName>
-
+	<finalName>${project.name}-${project.version}-${BUILD_NUMBER}</finalName>
     <plugins>
       <plugin>
         <groupId>org.mortbay.jetty</groupId>
